@@ -9,12 +9,20 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var tabBarSubview: CustomView!
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.view.addSubview(tabBarSubview)
     }
 
+    func buttonTaped(_sender:UIButton) {
+        print("Button taped")
+    }
+    
+    func buttonTaped2(sender: UIButton) {
+        print("Button taped")
+
+    }
 
 }
-
