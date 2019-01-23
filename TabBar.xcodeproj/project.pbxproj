@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02E77D8C21F73FAE002F1252 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E77D8A21F73FAE002F1252 /* CustomView.swift */; };
+		02E77D8D21F73FAE002F1252 /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02E77D8B21F73FAE002F1252 /* CustomView.xib */; };
 		AABAE59E21F4B92E00C0FE51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABAE59D21F4B92E00C0FE51 /* AppDelegate.swift */; };
 		AABAE5A021F4B92E00C0FE51 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABAE59F21F4B92E00C0FE51 /* ViewController.swift */; };
 		AABAE5A321F4B92E00C0FE51 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AABAE5A121F4B92E00C0FE51 /* Main.storyboard */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02E77D8A21F73FAE002F1252 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		02E77D8B21F73FAE002F1252 /* CustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
 		AABAE59A21F4B92E00C0FE51 /* TabBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AABAE59D21F4B92E00C0FE51 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AABAE59F21F4B92E00C0FE51 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +101,8 @@
 		AABAE59C21F4B92E00C0FE51 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				02E77D8A21F73FAE002F1252 /* CustomView.swift */,
+				02E77D8B21F73FAE002F1252 /* CustomView.xib */,
 				AABAE59D21F4B92E00C0FE51 /* AppDelegate.swift */,
 				AABAE59F21F4B92E00C0FE51 /* ViewController.swift */,
 				AABAE5A121F4B92E00C0FE51 /* Main.storyboard */,
@@ -230,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AABAE5A821F4B92F00C0FE51 /* LaunchScreen.storyboard in Resources */,
+				02E77D8D21F73FAE002F1252 /* CustomView.xib in Resources */,
 				AABAE5A521F4B92F00C0FE51 /* Assets.xcassets in Resources */,
 				AABAE5A321F4B92E00C0FE51 /* Main.storyboard in Resources */,
 			);
@@ -256,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02E77D8C21F73FAE002F1252 /* CustomView.swift in Sources */,
 				AABAE5A021F4B92E00C0FE51 /* ViewController.swift in Sources */,
 				AABAE59E21F4B92E00C0FE51 /* AppDelegate.swift in Sources */,
 			);
