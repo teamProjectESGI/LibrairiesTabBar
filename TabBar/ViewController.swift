@@ -78,6 +78,7 @@ class TabBar: UIView {
     let item1: UIButton = {
         let item = UIButton(type: .system)
         item.setTitle("Home", for: .normal)
+        item.frame = CGRect(x: 0, y: 0, width: 15, height: 25)
         return item
     }()
 }
