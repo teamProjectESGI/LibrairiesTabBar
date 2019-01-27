@@ -8,15 +8,19 @@
 
 import UIKit
 
-class TabBarViewController: UIViewController {
-    var button: UIBarButtonItem?
+public class TabBarViewController: UIViewController {
+   
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    //var button: UIBarButtonItem?
     
     /*override func viewDidLoad() {
      super.viewDidLoad()
+     view.backgroundColor = .white
      launchApp()
      }*/
-    
-    func launchApp(){
+    public func launchApp(){
         let container = UIView()
         
         let screensize = UIScreen.main.bounds
@@ -75,13 +79,8 @@ class TabBarViewController: UIViewController {
             50)
         
         NSLayoutConstraint.activate([horizontalConstraint, verticalConstraint, widthConstaint, heightConstaint])
-        
+    }
+    public func clickButton(_sender: UIButton)  {
+        print("button clicked")
     }
 }
-
-
-
-func clickButton(_sender: UIButton)  {
-    print("button clicked")
-}
-
