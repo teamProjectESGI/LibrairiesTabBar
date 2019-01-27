@@ -10,9 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var tabBarSubview: CustomView!
+    //@IBOutlet weak var tabBarSubview: CustomView!
     
     var tabBar: TabBar { return self.view as! TabBar}
+    
     
     /*override func viewDidLoad() {
         self.view.addSubview(tabBarSubview)
@@ -22,24 +23,30 @@ class ViewController: UIViewController {
         self.view = TabBar(frame: UIScreen.main.bounds)
     }
 
-    func buttonTaped(_sender:UIButton) {
-        print("Button taped")
-    }
     
-    func buttonTaped2(sender: UIButton) {
-        print("Button taped")
-
-    }
 
 }
 
 class TabBar: UIView {
+    var screensize: CGRect = UIScreen.main.bounds
+    var imageButtonWidth: Double = 0.0
+    var imageButtonHeight: Double = 0.0
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .white
         
+        imageButtonWidth = Double(screensize.width * 0.2)
+        imageButtonHeight = Double(screensize.height * 0.2)
+        
+        
         self.setupViews()
-        self.setupConstraints(height: 100, isBottom: false)
+        self.setupConstraintsView(height: 100, isBottom: true)
+        self.setupConstraintsButton(height: CGFloat(imageButtonWidth), isBottom: true, item: item1)
+        self.setupConstraintsButton(height: CGFloat(imageButtonWidth), isBottom: true, item: item2)
+        self.setupConstraintsButton(height: CGFloat(imageButtonWidth), isBottom: true, item: item3)
+        self.setupConstraintsButton(height: CGFloat(imageButtonWidth), isBottom: true, item: item4)
+        self.setupConstraintsButton(height: CGFloat(imageButtonWidth), isBottom: true, item: item5)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -48,10 +55,16 @@ class TabBar: UIView {
     
     func setupViews() {
         self.addSubview(contentView)
-        self.addSubview(item1)
+        let stackView = UIStackView(arrangedSubviews: [item1, item2, item3, item4, item5])
+        stackView.axis = .horizontal
+        stackView.distribution = .fillEqually
+        contentView.addSubview(stackView)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.autoresizingMask = [.flexibleHeight]
+
     }
     
-    func setupConstraints(height: CGFloat, isBottom: Bool) {
+    func setupConstraintsView(height: CGFloat, isBottom: Bool) {
         self.translatesAutoresizingMaskIntoConstraints = false
         contentView.translatesAutoresizingMaskIntoConstraints = false
         if(isBottom) {
@@ -67,6 +80,20 @@ class TabBar: UIView {
         }
         
     }
+    func setupConstraintsButton(height: CGFloat, isBottom: Bool, item: UIView) {
+        self.translatesAutoresizingMaskIntoConstraints = false
+        item.translatesAutoresizingMaskIntoConstraints = false
+        if(isBottom) {
+            item.heightAnchor.constraint(equalToConstant: height).isActive = true
+            item.widthAnchor.constraint(equalToConstant: height).isActive = true
+            item.autoresizingMask = [.flexibleHeight]
+        } else {
+            item.heightAnchor.constraint(equalToConstant: height).isActive = true
+            item.widthAnchor.constraint(equalToConstant: height).isActive = true
+            item.autoresizingMask = [.flexibleWidth]
+        }
+        
+    }
     
     let contentView: UIView = {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
@@ -75,10 +102,33 @@ class TabBar: UIView {
         return view
     }()
     
-    let item1: UIButton = {
-        let item = UIButton(type: .system)
-        item.setTitle("Home", for: .normal)
-        item.frame = CGRect(x: 0, y: 0, width: 15, height: 25)
+    let item1: UIView = {
+        let item = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        item.backgroundColor = UIColor.black
+        return item
+    }()
+    
+    let item2: UIView = {
+        let item = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        item.backgroundColor = UIColor.blue
+        return item
+    }()
+    
+    let item3: UIView = {
+        let item = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        item.backgroundColor = UIColor.yellow
+        return item
+    }()
+    
+    let item4: UIView = {
+        let item = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        item.backgroundColor = UIColor.red
+        return item
+    }()
+    
+    let item5: UIView = {
+        let item = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        item.backgroundColor = UIColor.brown
         return item
     }()
 }
